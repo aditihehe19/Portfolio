@@ -1,33 +1,67 @@
-import Link from "next/link";
+"use client";
+
+import { useTheme } from "next-themes";
 import * as React from "react";
 
-import { buttonVariants } from "@/components/ui/button";
-import CustomTooltip from "@/components/ui/custom-tooltip";
-import { SocialLinks } from "@/config/socials";
+import HalftoneWordmarkFooter, {
+  type FooterColumn,
+  type HalftonePreset,
+} from "@/components/ui/halftone-wordmark-footer";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+const columns: FooterColumn[] = [
+  {
+    title: "Explore",
+    links: [
+      { label: "Projects", href: "/#projects" },
+      { label: "Experience", href: "/#experience" },
+      { label: "Skills", href: "/#skills" },
+      { label: "Resume", href: "/resume" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { label: "GitHub", href: siteConfig.links.github },
+      { label: "LinkedIn", href: siteConfig.links.linkedin },
+      { label: "LeetCode", href: siteConfig.links.leetcode },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [{ label: "aditi.k2442@gmail.com", href: siteConfig.links.email }],
+  },
+];
+
+// Light-background site themes get the cream "paper" print; the rest stay dark.
+const presetFor: Record<string, HalftonePreset> = {
+  light: "paper",
+  paper: "paper",
+  retro: "paper",
+  synthwave: "ember",
+  cyberpunk: "cobalt",
+};
+
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
+  const preset = (mounted && resolvedTheme && presetFor[resolvedTheme]) || "night";
+
   return (
-    <footer className={cn(className)}>
-      <div className="container flex items-center justify-center gap-8 mt-10 py-10 md:h-24">
-        {SocialLinks.map((item, ind) => (
-          <CustomTooltip icon={item.icon} text={item.username} key={ind}>
-            <Link
-              href={item.link}
-              target="_blank"
-              className={cn(
-                buttonVariants({
-                  variant: "ghost",
-                  size: "sm",
-                }),
-                "h-10 w-10 p-2"
-              )}
-            >
-              <item.icon className="h-5 w-5" />
-            </Link>
-          </CustomTooltip>
-        ))}
-      </div>
-    </footer>
+    <HalftoneWordmarkFooter
+      className={cn("mt-16", className)}
+      wordmark="aditi"
+      label="Aditi Kotnala"
+      meta="©2026 · Cybersecurity & CS"
+      columns={columns}
+      preset={preset}
+      crop={0.3}
+      // "aditi" is short, so it is set very large; grow the footer with the
+      // width so the letters always clear the link rows above them.
+      height="max(calc(24vw + 230px), 410px)"
+    />
   );
 }
