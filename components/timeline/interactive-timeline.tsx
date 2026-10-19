@@ -146,7 +146,7 @@ export default function InteractiveTimeline() {
               </div>
 
               {/* Card Container */}
-              <div className="p-5 sm:p-6 rounded-xl border border-border/70 bg-background/90 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 shadow-sm">
+              <div className="spotlight-edge p-5 sm:p-6 rounded-xl border border-border/70 bg-background/90 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                   <div className="flex items-center gap-2 flex-wrap">
                     <h4 className="text-base sm:text-lg font-bold text-foreground">

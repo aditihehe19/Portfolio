@@ -666,3 +666,50 @@
   margin: 1.5rem auto;
   display: block;
 }
+/* Spotlight edges: the card border lights up around the cursor, and the hue
+   sweeps across the screen. Pointer coordinates come from SpotlightTracker. */
+.spotlight-edge {
+  --spot-x: -9999px;
+  --spot-y: -9999px;
+  --spot-xp: 0.5;
+  --spot-size: 300px;
+  --spot-hue: calc(210 + var(--spot-xp) * 150);
+  position: relative;
+}
+.spotlight-edge::before,
+.spotlight-edge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+/* the lit ring, cut out of the border box */
+.spotlight-edge::before {
+  padding: 2px;
+  background: radial-gradient(
+    var(--spot-size) circle at var(--spot-x) var(--spot-y),
+    hsl(var(--spot-hue) 100% 72% / 1),
+    hsl(var(--spot-hue) 100% 62% / 0.75) 30%,
+    hsl(var(--spot-hue) 100% 55% / 0.2) 55%,
+    transparent 75%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+/* a faint wash of the same light across the card face */
+.spotlight-edge::after {
+  background: radial-gradient(
+    calc(var(--spot-size) * 1.1) circle at var(--spot-x) var(--spot-y),
+    hsl(var(--spot-hue) 100% 70% / 0.12),
+    transparent 65%
+  );
+}
+@media (hover: none) {
+  .spotlight-edge::before,
+  .spotlight-edge::after {
+    display: none;
+  }
+}

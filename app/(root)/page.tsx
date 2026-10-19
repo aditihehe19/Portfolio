@@ -413,7 +413,7 @@ export default function IndexPage() {
         </div>
 
         <div className="max-w-2xl mx-auto w-full">
-          <div className="p-6 sm:p-8 rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-sm">
+          <div className="spotlight-edge p-6 sm:p-8 rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-sm">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-muted/40 border border-border/60 mb-6">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-primary/10 text-primary">

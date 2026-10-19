@@ -156,7 +156,7 @@ export default function ProfilesTracker() {
   return (
     <div className="w-full space-y-8">
       {/* GitHub Live Tracking Card */}
-      <div className="rounded-xl border border-border/80 bg-background/95 p-5 sm:p-7 shadow-sm">
+      <div className="spotlight-edge rounded-xl border border-border/80 bg-background/95 p-5 sm:p-7 shadow-sm">
         {/* Top Header Row with Icon and Title */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/60">
           <div className="flex items-center gap-3">
@@ -417,7 +417,7 @@ export default function ProfilesTracker() {
       </div>
 
       {/* LeetCode Live Tracker Card */}
-      <div className="rounded-xl border border-border/80 bg-background/95 p-5 sm:p-7 shadow-sm">
+      <div className="spotlight-edge rounded-xl border border-border/80 bg-background/95 p-5 sm:p-7 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/60">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500">

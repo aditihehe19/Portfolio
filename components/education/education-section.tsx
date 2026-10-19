@@ -10,7 +10,7 @@ export default function EducationSection() {
       {educationList.map((edu) => (
         <div
           key={edu.id}
-          className="relative p-6 sm:p-7 rounded-2xl border border-border/80 bg-background/90 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 shadow-sm flex flex-col justify-between"
+          className="spotlight-edge relative p-6 sm:p-7 rounded-2xl border border-border/80 bg-background/90 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 shadow-sm flex flex-col justify-between"
         >
           <div>
             <div className="flex items-start justify-between gap-3 mb-3">
