@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -7,8 +6,7 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import LiveStatusBar from "@/components/common/live-status-bar";
-import SocialPillBar from "@/components/common/social-pill-bar";
+import HomeHero from "@/components/common/home-hero";
 import ExperienceCard from "@/components/experience/experience-card";
 import { DetailFolders, ProjectFolders } from "@/components/projects/folder-shelf";
 import SkillBubbles from "@/components/skills/skill-bubbles";
@@ -23,7 +21,6 @@ import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import profileImg from "@/public/profile-img.jpg";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
@@ -53,98 +50,7 @@ export default function IndexPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="space-y-6 pb-12 pt-8 md:py-20 lg:py-24 flex flex-col items-center justify-center min-h-[90vh]">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-5 text-center">
-          {/* Avatar with subtle glow */}
-          <div className="relative group">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/50 to-primary/20 blur-md opacity-75 group-hover:opacity-100 transition duration-500" />
-            <Image
-              src={profileImg}
-              height={180}
-              width={180}
-              className="relative bg-primary rounded-full h-36 w-36 sm:h-44 sm:w-44 border-4 border-primary object-cover shadow-2xl"
-              alt="Aditi Kotnala - Cybersecurity & CS Portfolio"
-              priority
-            />
-          </div>
-
-          <AnimatedText
-            as="h1"
-            delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground"
-          >
-            Aditi Kotnala
-          </AnimatedText>
-
-          <AnimatedText
-            as="h3"
-            delay={0.3}
-            className="font-heading text-base sm:text-xl md:text-2xl text-primary font-semibold"
-          >
-            Cybersecurity & CS Undergraduate · Secure Software & Cryptography
-          </AnimatedText>
-
-          <div className="mt-2 max-w-[44rem] text-center">
-            <p className="leading-relaxed text-muted-foreground text-sm sm:text-base">
-              Computer Science and Engineering undergraduate focused on cybersecurity, cryptography, and defensive security engineering. Building cryptographic hash benchmarking platforms and AI-powered learning companions.
-            </p>
-          </div>
-
-          {/* Social Pill Bar (Screenshot 1) */}
-          <div className="mt-2">
-            <SocialPillBar />
-          </div>
-
-          {/* Live Status Bar (Screenshot 2: Local Time IST + Portfolio Views) */}
-          <div className="mt-4 w-full max-w-md">
-            <LiveStatusBar />
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col mt-6 items-center justify-center sm:flex-row sm:space-x-4 gap-3 w-full sm:w-auto">
-            <AnimatedText delay={0.6}>
-              <Link
-                href="/resume"
-                className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto shadow-md")}
-                aria-label="View functional resume"
-              >
-                <Icons.post className="w-4 h-4 mr-2" /> View Resume
-              </Link>
-            </AnimatedText>
-
-            <AnimatedText delay={0.7}>
-              <Link
-                href="#projects"
-                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}
-              >
-                <Icons.gitRepoIcon className="w-4 h-4 mr-2" /> Explore Projects
-              </Link>
-            </AnimatedText>
-
-            <AnimatedText delay={0.8}>
-              <Link
-                href="#contact"
-                className={cn(
-                  buttonVariants({
-                    variant: "secondary",
-                    size: "lg",
-                  }),
-                  "w-full sm:w-auto"
-                )}
-                aria-label="Contact Aditi Kotnala"
-              >
-                <Icons.contact className="w-4 h-4 mr-2" /> Get In Touch
-              </Link>
-            </AnimatedText>
-          </div>
-
-          <AnimatedText delay={1.0}>
-            <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Icons.chevronDown className="h-6 w-6 mt-8 animate-bounce" />
-            </Link>
-          </AnimatedText>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* SECTION: PROJECTS */}
       <AnimatedSection
