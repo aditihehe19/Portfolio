@@ -255,9 +255,11 @@
     @apply border-border;
   }
 
+  /* `clip`, not `hidden`: hidden turns <body> into its own scroll container,
+     which silently breaks `position: sticky` everywhere on the page */
   html,
   body {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {

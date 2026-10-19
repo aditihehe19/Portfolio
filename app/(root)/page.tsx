@@ -7,6 +7,7 @@ import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import HomeHero from "@/components/common/home-hero";
+import ScrollInterlude from "@/components/common/scroll-interlude";
 import ExperienceCard from "@/components/experience/experience-card";
 import { DetailFolders, ProjectFolders } from "@/components/projects/folder-shelf";
 import SkillBubbles from "@/components/skills/skill-bubbles";
@@ -144,6 +145,9 @@ export default function IndexPage() {
           ))}
         </div>
       </AnimatedSection>
+
+      {/* SCROLL INTERLUDE: statement fills word by word, keyword rows ride the scroll */}
+      <ScrollInterlude />
 
       {/* SECTION: EDUCATION */}
       <AnimatedSection
