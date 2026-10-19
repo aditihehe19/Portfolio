@@ -448,7 +448,10 @@ export default function HalftoneWordmarkFooter({
   }, [key])
 
   const toTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    // a smooth-scroll library on the page (Lenis) would fight a native smooth scroll
+    const lenis = (window as unknown as { __lenis?: { scrollTo: (y: number) => void } }).__lenis
+    if (lenis) lenis.scrollTo(0)
+    else window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return (

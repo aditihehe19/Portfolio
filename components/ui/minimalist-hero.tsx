@@ -111,7 +111,12 @@ export const MinimalistHero = ({
       )}
 
       {/* Main Content Area */}
-      <div className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-0">
+      {/* Parallax: [data-parallax-layer] 1 (back) … 4 (front) drift apart on scroll; see useParallaxLayers */}
+      <div
+        data-parallax-layers
+        data-parallax-fade
+        className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-0"
+      >
         {/* Left Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,10 +124,12 @@ export const MinimalistHero = ({
           transition={{ duration: 0.6, delay: 1 }}
           className="z-20 order-2 md:order-1 text-center md:text-left"
         >
-          <p className="mx-auto max-w-xs text-sm leading-relaxed text-foreground/80 md:mx-0">{mainText}</p>
-          <a href={readMoreLink} className="mt-4 inline-block text-sm font-medium text-foreground underline decoration-from-font">
-            {readMoreLabel}
-          </a>
+          <div data-parallax-layer="4">
+            <p className="mx-auto max-w-xs text-sm leading-relaxed text-foreground/80 md:mx-0">{mainText}</p>
+            <a href={readMoreLink} className="mt-4 inline-block text-sm font-medium text-foreground underline decoration-from-font">
+              {readMoreLabel}
+            </a>
+          </div>
         </motion.div>
 
         {/* Center Image with Circle */}
@@ -133,12 +140,17 @@ export const MinimalistHero = ({
             imageMode === "cutout" && "min-h-[380px] pt-12 md:min-h-[460px] md:pt-0 lg:min-h-[560px]"
           )}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="absolute z-0 h-[280px] w-[280px] rounded-full bg-amber-400/90 md:h-[340px] md:w-[340px] lg:h-[440px] lg:w-[440px]"
-          ></motion.div>
+          <div data-parallax-layer="1" className="absolute inset-0 z-0 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className={cn(
+                "h-[280px] w-[280px] rounded-full bg-amber-400/90 md:h-[340px] md:w-[340px] lg:h-[440px] lg:w-[440px]",
+                imageMode === "cutout" && "mt-12 md:mt-0"
+              )}
+            ></motion.div>
+          </div>
           {imageMode === "circle" ? (
             <motion.img
               src={imageSrc}
@@ -152,7 +164,10 @@ export const MinimalistHero = ({
             // The portrait is anchored just below the circle and is taller than
             // it, so the head and shoulders rise out over its top edge. The flat
             // bottom of the cut-out fades away instead of ending in a hard line.
-            <div className="absolute z-10 h-[280px] w-[280px] md:h-[340px] md:w-[340px] lg:h-[440px] lg:w-[440px]">
+            <div
+              data-parallax-layer="2"
+              className="absolute z-10 h-[280px] w-[280px] md:h-[340px] md:w-[340px] lg:h-[440px] lg:w-[440px]"
+            >
               <motion.img
                 src={imageSrc}
                 alt={imageAlt}
@@ -172,7 +187,7 @@ export const MinimalistHero = ({
           transition={{ duration: 0.6, delay: 1.2 }}
           className="z-20 order-3 flex items-center justify-center text-center md:justify-start md:pl-10 md:text-left"
         >
-          <h1 className="text-6xl font-extrabold leading-[0.95] text-foreground md:text-7xl lg:text-8xl">
+          <h1 data-parallax-layer="3" className="text-6xl font-extrabold leading-[0.95] text-foreground md:text-7xl lg:text-8xl">
             {overlayText.part1}
             <br />
             {overlayText.part2}

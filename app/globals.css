@@ -674,7 +674,12 @@
   --spot-xp: 0.5;
   --spot-size: 300px;
   --spot-hue: calc(210 + var(--spot-xp) * 150);
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
   position: relative;
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
 }
 .spotlight-edge::before,
 .spotlight-edge::after {
@@ -706,6 +711,11 @@
     hsl(var(--spot-hue) 100% 70% / 0.12),
     transparent 65%
   );
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .spotlight-edge {
+    transform: none;
+  }
 }
 @media (hover: none) {
   .spotlight-edge::before,

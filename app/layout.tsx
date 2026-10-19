@@ -1,3 +1,4 @@
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -6,6 +7,8 @@ import localFont from "next/font/local";
 import Script from "next/script";
 
 import { Analytics } from "@/components/common/analytics";
+import { ParallaxBackdrop } from "@/components/common/parallax-backdrop";
+import { SmoothScroll } from "@/components/common/smooth-scroll";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
@@ -123,6 +126,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             "synthwave",
           ]}
         >
+          <ParallaxBackdrop />
+          <SmoothScroll />
           {children}
           <Analytics />
           <Toaster />

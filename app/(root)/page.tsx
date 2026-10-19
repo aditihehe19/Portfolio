@@ -58,7 +58,7 @@ export default function IndexPage() {
         className="container space-y-6 bg-muted/40 py-16 my-10 rounded-3xl border border-border/40"
         id="projects"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Showcase
           </span>
@@ -91,7 +91,7 @@ export default function IndexPage() {
 
       {/* SECTION: DETAILS (FOLDERS) */}
       <AnimatedSection direction="up" className="container space-y-6 py-16 my-10" id="details">
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             At a Glance
           </span>
@@ -113,7 +113,7 @@ export default function IndexPage() {
         className="container space-y-6 py-16 my-10"
         id="experience"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Career & Leadership
           </span>
@@ -151,7 +151,7 @@ export default function IndexPage() {
         className="container space-y-6 bg-muted/40 py-16 my-10 rounded-3xl border border-border/40"
         id="education"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Academics
           </span>
@@ -181,7 +181,7 @@ export default function IndexPage() {
         className="container space-y-6 py-16 my-10"
         id="skills"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Expertise
           </span>
@@ -209,7 +209,7 @@ export default function IndexPage() {
         className="container space-y-6 bg-muted/40 py-16 my-10 rounded-3xl border border-border/40"
         id="achievements"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-500 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
             Honors & Milestones
           </span>
@@ -239,7 +239,7 @@ export default function IndexPage() {
         className="container space-y-6 py-16 my-10"
         id="profiles"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-500 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
             Live Synchronization
           </span>
@@ -269,7 +269,7 @@ export default function IndexPage() {
         className="container space-y-6 bg-muted/40 py-16 my-10 rounded-3xl border border-border/40"
         id="timeline"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Interactive Journey
           </span>
@@ -299,7 +299,7 @@ export default function IndexPage() {
         className="container space-y-6 py-16 my-10"
         id="contact"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div data-parallax-speed="0.35" className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Reach Out
           </span>
@@ -319,7 +319,7 @@ export default function IndexPage() {
         </div>
 
         <div className="max-w-2xl mx-auto w-full">
-          <div className="spotlight-edge p-6 sm:p-8 rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-sm">
+          <div data-tilt="off" className="spotlight-edge p-6 sm:p-8 rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-sm">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-muted/40 border border-border/60 mb-6">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
