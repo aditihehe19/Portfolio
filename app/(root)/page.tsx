@@ -11,7 +11,7 @@ import LiveStatusBar from "@/components/common/live-status-bar";
 import SocialPillBar from "@/components/common/social-pill-bar";
 import ExperienceCard from "@/components/experience/experience-card";
 import { DetailFolders, ProjectFolders } from "@/components/projects/folder-shelf";
-import SkillsCard from "@/components/skills/skills-card";
+import SkillBubbles from "@/components/skills/skill-bubbles";
 import EducationSection from "@/components/education/education-section";
 import AchievementsSection from "@/components/achievements/achievements-section";
 import ProfilesTracker from "@/components/profiles/profiles-tracker";
@@ -22,7 +22,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { siteConfig } from "@/config/site";
-import { skills } from "@/config/skills";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.jpg";
 
@@ -295,7 +294,7 @@ export default function IndexPage() {
           </AnimatedText>
         </div>
 
-        <SkillsCard skills={skills} />
+        <SkillBubbles />
       </AnimatedSection>
 
       {/* SECTION: ACHIEVEMENTS */}
