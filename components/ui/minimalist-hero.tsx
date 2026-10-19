@@ -126,7 +126,13 @@ export const MinimalistHero = ({
         </motion.div>
 
         {/* Center Image with Circle */}
-        <div className="relative order-1 md:order-2 flex justify-center items-center h-full">
+        <div
+          className={cn(
+            "relative order-1 md:order-2 flex justify-center items-center h-full",
+            // the circle and cut-out are absolutely placed, so reserve their room when stacked
+            imageMode === "cutout" && "min-h-[380px] pt-12 md:min-h-[460px] md:pt-0 lg:min-h-[560px]"
+          )}
+        >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -143,14 +149,19 @@ export const MinimalistHero = ({
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
             />
           ) : (
-            <motion.img
-              src={imageSrc}
-              alt={imageAlt}
-              className="relative z-10 h-auto w-56 object-cover md:w-64 scale-150 lg:w-72"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-            />
+            // The portrait is anchored just below the circle and is taller than
+            // it, so the head and shoulders rise out over its top edge. The flat
+            // bottom of the cut-out fades away instead of ending in a hard line.
+            <div className="absolute z-10 h-[280px] w-[280px] md:h-[340px] md:w-[340px] lg:h-[440px] lg:w-[440px]">
+              <motion.img
+                src={imageSrc}
+                alt={imageAlt}
+                className="absolute bottom-[-8%] left-1/2 h-auto w-[108%] max-w-none [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
+                initial={{ opacity: 0, x: "-50%", y: 90, scale: 0.92 }}
+                animate={{ opacity: 1, x: "-50%", y: 0, scale: 1 }}
+                transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
+              />
+            </div>
           )}
         </div>
 

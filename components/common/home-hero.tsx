@@ -22,9 +22,9 @@ export default function HomeHero() {
       mainText="Aditi Kotnala, a CSE undergraduate at SRM University AP focused on cybersecurity, cryptography and defensive security engineering. I build hash-security benchmarking tools and AI-powered learning companions."
       readMoreLink="/resume"
       readMoreLabel="View Resume"
-      imageSrc="/profile-img.jpg"
-      imageAlt="Aditi Kotnala at her desk, with code on the monitors behind her"
-      imageMode="circle"
+      imageSrc="/profile-cutout.webp"
+      imageAlt="Portrait of Aditi Kotnala"
+      imageMode="cutout"
       overlayText={{ part1: "stay", part2: "secure." }}
       socialLinks={socialLinks}
       locationText="Amaravati, India"
