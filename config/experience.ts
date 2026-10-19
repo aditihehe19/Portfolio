@@ -27,9 +27,9 @@ export const experiences: ExperienceInterface[] = [
     company: "SRM University AP",
     companyUrl: "https://www.srmap.edu.in/",
     location: "Amaravati, Andhra Pradesh, India",
-    startDate: new Date("2025-06-01"),
-    endDate: new Date("2025-11-01"),
-    customDuration: "Jun 2025 – Nov 2025",
+    startDate: new Date("2026-06-01"),
+    endDate: new Date("2026-08-31"),
+    customDuration: "Jun 2026 – Aug 2026",
     mentor: {
       name: "Dr. Suraj Singh Khurana",
       url: "https://in.linkedin.com/in/suraj-singh-khurana",

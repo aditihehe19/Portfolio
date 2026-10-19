@@ -84,7 +84,7 @@ const detailFolders: ShelfFolder[] = [
     art: "aurora",
     seed: 3,
     files: [
-      { name: "Research Intern — AI", meta: "SRM AP · 2025", href: "/experience/srm-ai-research-intern" },
+      { name: "Research Intern — AI", meta: "SRM AP · 2026", href: "/experience/srm-ai-research-intern" },
       { name: "Content & Design Lead", meta: "Hack Shastra", href: "/experience/hack-shastra" },
       { name: "Content Writer", meta: "GDG SRM AP", href: "/experience/gdg-srm-ap" },
     ],

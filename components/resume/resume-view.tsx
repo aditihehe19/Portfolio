@@ -147,7 +147,7 @@ export default function ResumeView() {
                   Research Intern — AI & Document Intelligence – SRM University AP
                 </span>
                 <span className="text-xs font-semibold text-zinc-700">
-                  June 2025 – November 2025
+                  June 2026 – August 2026
                 </span>
               </div>
               <div className="text-[11.5px] text-zinc-600 italic">

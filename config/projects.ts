@@ -126,8 +126,8 @@ export const Projects: ProjectInterface[] = [
       "OCR",
       "FastAPI",
     ],
-    startDate: new Date("2025-06-01"),
-    endDate: new Date("2025-11-01"),
+    startDate: new Date("2026-06-01"),
+    endDate: new Date("2026-08-31"),
     companyLogoImg: "/projects/structured-knowledge-extraction.jpg",
     pagesInfoArr: [
       {
