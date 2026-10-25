@@ -86,7 +86,10 @@ export type ValidSkills =
   | "OpenCV"
   | "YOLO"
   | "GitHub"
-  | "RAG";
+  | "RAG"
+  | "Reinforcement Learning"
+  | "Gymnasium"
+  | "Stable-Baselines3";
 
 export type ValidCategory =
   | "Full Stack"

@@ -150,6 +150,47 @@ export const Projects: ProjectInterface[] = [
       ],
     },
   },
+  {
+    id: "lunar-lander-rl",
+    companyName: "Lunar Lander: Reinforcement Learning & Reward Hacking",
+    type: "Personal",
+    category: ["AI / ML"],
+    shortDescription:
+      "Trained a PPO agent to land a rocket in Gymnasium's Lunar Lander, then wrote custom reward rules: one that taught it to cheat by hovering, and a fix that made it land again.",
+    githubLink: "https://github.com/aditihehe19/rockboard",
+    techStack: [
+      "Python",
+      "PyTorch",
+      "Reinforcement Learning",
+      "Stable-Baselines3",
+      "Gymnasium",
+      "Machine Learning",
+    ],
+    startDate: new Date("2026-10-25"),
+    endDate: new Date("2026-10-25"),
+    companyLogoImg: "/projects/lunar-lander-rl.jpg",
+    pagesInfoArr: [
+      {
+        title: "Landing, Hovering & the Fix",
+        description:
+          "Real frames from the recorded clips: a random rocket crashing, the trained agent landing, the reward-hacked agent hovering, and the fixed agent landing again.",
+        imgArr: ["/projects/lunar-lander-rl.jpg"],
+      },
+    ],
+    descriptionDetails: {
+      paragraphs: [
+        "Lunar Lander is a physics game from Gymnasium where a rocket has to land between two flags. I trained a small neural network with PPO (Stable-Baselines3) to fly it from just eight numbers per frame, such as position, speed, tilt and leg contact, with no hand-written control logic.",
+        "I then experimented with reward shaping, writing my own reward rules as Gymnasium wrappers. A rule paying +1 for every frame the rocket was upright and slow taught it to hover until the time limit instead of landing, a textbook case of reward hacking. Paying for the change between frames instead of the state itself fixed it.",
+      ],
+      bullets: [
+        "Trained PPO agents that solve the task: 262 to 264 average score over 50 unseen attempts each (200 counts as solved), with 99 of 100 landings, in about 11 minutes per run on a laptop CPU.",
+        "Exposed reward hacking with a custom reward: the training score climbed to about 1,000 while the real game score stayed below 150, and one seed hovered out the clock in all 50 test attempts.",
+        "Fixed it with potential-based shaping (pay for becoming calm, not for staying calm) plus a small per-frame time fee; both seeds land again, averaging 259 and 272.",
+        "Showed that a time fee stops the exploring policy from idling on the pad with its engines blipping: it settled and finished in 18 of 20 attempts, versus 0 of 20 without the fee.",
+        "Evaluated every model on the plain game with custom rewards turned off, across two random seeds, with training curves and recorded clips of each behavior.",
+      ],
+    },
+  },
 ];
 
 export const featuredProjects: ProjectInterface[] = Projects;
